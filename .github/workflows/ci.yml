@@ -89,7 +89,7 @@ jobs:
           - build: linux
             os: ubuntu-latest
             rust: stable
-            target: armhf-unknown-linux-gnu
+            target: armv7-unknown-linux-musleabihf
 #          - build: macos
 #            os: macos-latest
 #            rust: stable
@@ -125,7 +125,7 @@ jobs:
         run: rustup target add ${{ matrix.target }}
 
       - name: Install cross build dependencies
-        if: matrix.target == 'armhf-unknown-linux-gnu'
+        #if: matrix.target == 'armhf-unknown-linux-gnu'
         run: sudo apt-get update && sudo apt-get install -y gcc-armhf-linux-gnu libc6-dev-arm64-cross musl-tools
 
       - name: Build server
