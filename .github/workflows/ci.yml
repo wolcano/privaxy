@@ -3,7 +3,7 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  RUSTFLAGS: '-C relocation-model=static -C target-feature=+crt-static' 
+  RUSTFLAGS: -C target-feature=+crt-static
   # -C linker=ld.lld
 
 jobs:
