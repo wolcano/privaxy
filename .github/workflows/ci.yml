@@ -126,7 +126,8 @@ jobs:
 
       - name: Install cross build dependencies
         #if: matrix.target == 'armhf-unknown-linux-gnu'
-        run: sudo apt-get update && sudo apt-get install -y gcc-armhf-linux-gnu libc6-dev-arm64-cross musl-tools
+        run: sudo apt-get update && sudo apt-get install -y  libc6-dev-arm64-cross musl-tools arm-linux-musleabihf-gcc 
+        #gcc-aarch64-linux-gnu
 
       - name: Build server
         uses: actions-rs/cargo@v1
