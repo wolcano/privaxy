@@ -3,8 +3,9 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  RUSTFLAGS: '-C linker=ld.lld -C relocation-model=static' 
+  RUSTFLAGS: '-C relocation-model=static' 
   # -C target-feature=+crt-static
+  # -C linker=ld.lld
 
 jobs:
   clippy_check:
